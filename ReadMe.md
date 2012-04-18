@@ -1,38 +1,13 @@
-# Node Apps
-## helloworld
+# LOGSPAM
 
-# Installation
+This is a webserver that spams logs to stdout and stderr. It's useful for testing tools that, say, saves stdout and stderr to a logging service.
 
-    mkdir myapp
-    cd myapp/
-    jitsu install helloworld
+## Usage:
 
-*If you do not have `jitsu` installed you can install it via `npm install jitsu -g`*
+1. Edit ./config.json to your heart's content.
 
-
-# Usage
-
-### Starting helloworld locally
-
-    node bin/server
-
-*Now you can visit http://localhost:3000 to view your application*
-
-### Deploy helloworld to nodejitsu
-
-    jitsu deploy
-
-*You will now be prompted for a `subdomain` to deploy your application on*
-
+2. `npm start`.
 
 # License
 
-(The MIT License)
-
-Copyright (c) 2011 Nodejitsu
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+MIT/X11.
