@@ -4,7 +4,7 @@
   "author": "Nodejitsu Inc. <support@nodejitsu.com>",
   "version": "0.0.0-1",
   "scripts": {
-    "start": "./bin/server"
+    "start": "node ./bin/server"
   },
   "engines": {
     "node": "0.6.x"
