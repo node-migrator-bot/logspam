@@ -1,0 +1,6 @@
+{
+  "port": 8080,
+  "interval": 1000,
+  "stdout": "This is a message on stdout.",
+  "stderr": "This is a message on stderr."
+}

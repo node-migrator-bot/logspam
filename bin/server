@@ -1,18 +1,37 @@
 #!/usr/bin/env node
 
 var http = require('http'),
-    util = require('util'),
-    interval = 1000,
-    message = 'This is a log spamming app! It spams logs every '
-      + interval + ' milliseconds!';
+    config = require('../config.json'),
+    port = config.port || 8080,
+    interval = config.interval ||1000,
+    stdout = config.stdout || 'Spamming logs on stdout!',
+    stderr = config.stderr || 'Spamming logs on stderr!';
 
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end(message);
+  res.writeHead(200, {'Content-Type': 'application/json'});
+  res.end(JSON.stringify(config, true, 2));
 }).listen(8080);
 
 
 setInterval(function () {
-  util.log(message);
-  console.error('(This is a log spammed onto stderr)');
+  console.log('%s - %s', timestamp(), stdout);
+  console.error('%s - %s', timestamp(), stderr);
 }, interval);
+
+
+// Ripped from util.js, using for the sweet timestamps.
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
