@@ -1,0 +1,13 @@
+{
+  "name": "logspam06",
+  "subdomain": "logspam06",
+  "author": "Nodejitsu Inc. <support@nodejitsu.com>",
+  "version": "0.0.0-1",
+  "scripts": {
+    "start": "./bin/server"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "analyze": false
+}
